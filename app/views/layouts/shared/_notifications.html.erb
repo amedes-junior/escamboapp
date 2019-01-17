@@ -1,9 +1,17 @@
+    <!-- Verificar toastr -->
+
     <% if notice %>
-        <%=javascript_tag  "$.notify('#{notice}', {className: 'success', globalPosition: 'top center'});"%>
+        <%=javascript_tag  "$.notify( {message: '#{notice}'}, {type: 'success', placement: {
+		from: 'top',
+		align: 'center'
+	}} ); " %>
     <% end %>
 
     <% if alert %>
-        <script>
-            $.notify("<%=alert%>", "error");
-        </script>
+        <%=javascript_tag  "$.notify( {message: '#{alert}'}, {type: 'danger', placement: {
+		from: 'top',
+		align: 'center'
+	}} );" %>
     <% end %>
+
+

@@ -9,18 +9,20 @@ gem 'rails-i18n'
 gem 'foreman'
 #Flexible authentication solution for Rails with Warden.
 gem 'devise'
-#Translations for the devise gem
+# Translations for the devise gem
 gem 'devise-i18n'
-#Rails gem of the Bootstrap based admin theme SB Admin 2.
+# Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
-  #A simple, versatile notification library
-  #gem 'rails-assets-notifyjs'
+  # A simple, versatile notification library
+  # gem 'rails-assets-notifyjs'
   gem 'rails-assets-bootstrap.growl'
-  #bootboxJS
+  # bootboxJS
   gem 'rails-assets-bootbox'
+  # A cross-browser library of CSS animations. As easy to use as an easy thing.
+  gem 'rails-assets-animate-css'
 end
 #Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
