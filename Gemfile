@@ -77,6 +77,9 @@ group :development, :test do
   gem 'lerolero_generator'
 
   gem 'mailcatcher'
+
+  #Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
 end
 
 group :development do

@@ -1,3 +1,4 @@
+require 'doctor_ipsum'
 namespace :dev do
 
   desc "Setup Development"
@@ -49,7 +50,7 @@ namespace :dev do
       Ad.create!(
         #title: Faker::Lorem.sentence([2,3,4,5].sample),
         title: Faker::Book.title,
-        description: LeroleroGenerator.sentence([2,4,6,8,10].sample),
+        description: markdown_fake,
         member: Member.first,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -61,7 +62,7 @@ namespace :dev do
     100.times do
       Ad.create!(
         title: Faker::Book.title,
-        description: LeroleroGenerator.sentence([2,4,6,8,10].sample),
+        description: markdown_fake,
         member: Member.all.sample,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -72,5 +73,9 @@ namespace :dev do
     puts "ANÚNCIOS cadastrados com sucesso!"
   end
   #####################################
+
+  def markdown_fake
+    %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
+  end
 
 end
