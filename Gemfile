@@ -55,6 +55,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
+#FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+
+# If Turbolinks are not enough for you. Wiselinks makes your application work faster.
+gem 'wiselinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -75,11 +80,14 @@ group :development, :test do
   gem 'faker'
   # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
   gem 'lerolero_generator'
-
+  # Mailcatcher
   gem 'mailcatcher'
-
   #Markdown Lorem Ipsum generator
   gem 'doctor_ipsum'
+  #Bootstrap Markdown
+  gem 'rails-assets-bootstrap-markdown'
+  #Marked
+  gem 'rails-assets-marked'
 end
 
 group :development do

@@ -1,9 +1,14 @@
 class Ad < ActiveRecord::Base
+
+  #Callbacks
+  before_save :md_to_html
+
   belongs_to :member
-  belongs_to :category
+  belongs_to :category, counter_cache: true
 
   scope :descending_order, -> (quantity=10) { limit(quantity).order(created_at: :desc) }
   scope :to_the, -> (member) { where(member: member) }
+  scope :by_category, -> (id) { where(category: id) }
 
   # Gem Money-rails
   monetize :price_cents
@@ -12,11 +17,32 @@ class Ad < ActiveRecord::Base
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
-  validates :title, :description, :price, presence:true
+  validates :title, :description_md, :description_short, :price, presence:true
   validates :picture, :category, :finish_date, presence:true
 
   validates :price, numericality: {greater_than:0}
 
+  private
+
+    def md_to_html
+      options = {
+        filter_html: true,
+        link_attributes: {
+          rel: "nofollow",
+          target: "_blank"
+        }
+      }
+
+      extensions = {
+        space_after_headers: true,
+        autolink: true
+      }
+      renderer = Redcarpet::Render::HTML.new(options)
+      markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+      self.description = markdown.render(self.description_md)
+
+    end
 
 
 end
