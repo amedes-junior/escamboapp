@@ -61,6 +61,9 @@ gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 gem 'wiselinks'
 
+gem 'kaminari'
+gem 'kaminari-i18n'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
