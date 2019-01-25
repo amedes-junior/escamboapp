@@ -2,11 +2,17 @@ class Ad < ActiveRecord::Base
 
   #Constantes
   QTT_PER_PAGE = 6
+
+  #ratyrate GEM
+  ratyrate_rateable "quality"
+
   #Callbacks
   before_save :md_to_html
 
   belongs_to :member
   belongs_to :category, counter_cache: true
+
+  has_many :comments
 
   scope :descending_order, -> (page) {
                                 order(created_at: :desc).page(page).per(QTT_PER_PAGE)

@@ -6,6 +6,10 @@ class Member < ActiveRecord::Base
 
   #before_action :authenticate_member!
 
+  # Associations
   has_many :ads
+
+  #Ratuyrate gem
+  ratyrate_rater
 
 end

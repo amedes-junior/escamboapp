@@ -60,6 +60,8 @@ gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.
 
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 gem 'wiselinks'
+#A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
 
 gem 'kaminari'
 gem 'kaminari-i18n'
