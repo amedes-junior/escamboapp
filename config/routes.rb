@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
+      resources :my_data, only: [:edit, :update]
     end
 
     resources :ad_detail, only: [:show, :index]
@@ -32,7 +33,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :admins, :skip => [:registrations]
-  devise_for :members, controllers: {sessions: 'members/sessions'}
+  devise_for :members, controllers:{
+    sessions: 'members/sessions'
+
+  }
 
   root 'site/home#index'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190124210851) do
+ActiveRecord::Schema.define(version: 20190129210146) do
 
 # Could not dump table "admins" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -102,6 +102,14 @@ ActiveRecord::Schema.define(version: 20190124210851) do
     t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "profile_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "second_name"
+    t.date     "birthdate"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "rates", force: :cascade do |t|
