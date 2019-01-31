@@ -9,6 +9,9 @@ class Member < ActiveRecord::Base
   # Associations
   has_many :ads
 
+  has_one :profile_member
+  accepts_nested_attributes_for :profile_member
+
   #Ratuyrate gem
   ratyrate_rater
 

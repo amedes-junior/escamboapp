@@ -1,4 +1,12 @@
 class Members::SessionsController < Devise::SessionsController
+
+
+  def new
+    super do |resource|
+      resource.build_profile_member
+    end
+  end
+
   protected
   #Git testing
 
