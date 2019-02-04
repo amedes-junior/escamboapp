@@ -24,6 +24,10 @@ class Ad < ActiveRecord::Base
                               where("lower(title) LIKE ?", "%#{term.to_s.downcase}%" ).page(page).per(QTT_PER_PAGE)
                             }
 
+  scope :random, -> (quantity) {
+    limit(quantity).order("RANDOM()")
+  }
+
 
   # Gem Money-rails
   monetize :price_cents
@@ -36,6 +40,15 @@ class Ad < ActiveRecord::Base
   validates :picture, :category, :finish_date, presence:true
 
   validates :price, numericality: {greater_than:0}
+
+
+  def second
+    self[1]
+  end
+
+  def third
+    self[3]
+  end
 
   private
 
