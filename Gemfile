@@ -93,6 +93,13 @@ group :development, :test do
   gem 'rails-assets-bootstrap-markdown'
   #Marked
   gem 'rails-assets-marked'
+
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
+
+  #RVM Suport for Capistrano v3
+  gem 'capistrano-rvm'
 end
 
 group :development do
@@ -104,5 +111,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  gem 'mysql2'
 end
 
