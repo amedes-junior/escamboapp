@@ -74,8 +74,7 @@ gem 'kaminari-i18n'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -85,6 +84,8 @@ gem 'kaminari-i18n'
   gem 'capistrano-rails', '~> 1.2'
   #RVM Suport for Capistrano v3
   gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -100,10 +101,6 @@ group :development, :test do
   gem 'mailcatcher'
   #Markdown Lorem Ipsum generator
   gem 'doctor_ipsum'
-
-
-
-
 end
 
 group :development do
@@ -119,5 +116,8 @@ end
 
 group :production do
   gem 'mysql2'
+
+  # Use Unicorn as the app server
+  gem 'unicorn'
 end
 
