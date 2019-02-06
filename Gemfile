@@ -16,7 +16,7 @@ gem 'bootstrap_sb_admin_base_v2'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
 
-source 'https://rails-assets.org' do
+source 'http://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
   # A simple, versatile notification library
   # gem 'rails-assets-notifyjs'
