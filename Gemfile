@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,7 +16,7 @@ gem 'bootstrap_sb_admin_base_v2'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
 
-source 'http://rails-assets.org' do
+source 'https://rails-assets.org' do
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
   # Bootstrap Notify
