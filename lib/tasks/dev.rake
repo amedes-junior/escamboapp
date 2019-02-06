@@ -5,7 +5,11 @@ namespace :dev do
   task setup: :environment do
      images_path = Rails.root.join('public', 'system')
      puts "Executando Setup de Desenvolvimento"
-     puts "Apagando images de public/system #{%x(rm -rf #{images_path})}"
+
+     if Rails.env.development?
+      puts "Apagando images de public/system #{%x(rm -rf #{images_path})}"
+     end
+
      puts "Apagando Banco de Dados #{%x(rake db:drop)}"
      puts "Criando Banco de Dados #{%x(rake db:create)}"
      puts %x(rake db:migrate)

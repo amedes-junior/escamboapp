@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,7 +16,7 @@ gem 'bootstrap_sb_admin_base_v2'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
 
-source 'https://rails-assets.org' do
+source 'http://rails-assets.org' do
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
   # Bootstrap Notify
@@ -80,6 +80,12 @@ gem 'kaminari-i18n'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
+  #RVM Suport for Capistrano v3
+  gem 'capistrano-rvm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -95,12 +101,9 @@ group :development, :test do
   #Markdown Lorem Ipsum generator
   gem 'doctor_ipsum'
 
-  gem 'capistrano', '~> 3.7'
-  gem 'capistrano-bundler', '~> 1.2'
-  gem 'capistrano-rails', '~> 1.2'
 
-  #RVM Suport for Capistrano v3
-  gem 'capistrano-rvm'
+
+
 end
 
 group :development do
