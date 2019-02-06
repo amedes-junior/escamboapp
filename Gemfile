@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,16 +16,21 @@ gem 'bootstrap_sb_admin_base_v2'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
 
-source 'http://rails-assets.org' do
+source 'https://rails-assets.org' do
+  # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
-  # A simple, versatile notification library
-  # gem 'rails-assets-notifyjs'
+  # Bootstrap Notify
   gem 'rails-assets-bootstrap.growl'
-  # bootboxJS
+  # BootboxJS
   gem 'rails-assets-bootbox'
-  # A cross-browser library of CSS animations. As easy to use as an easy thing.
+  # Animate CSS
   gem 'rails-assets-animate-css'
+  # Bootstrap Mardown
+  gem 'rails-assets-bootstrap-markdown'
+  # Marked
+  gem 'rails-assets-marked'
 end
+
 #Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
 #Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
@@ -89,10 +94,6 @@ group :development, :test do
   gem 'mailcatcher'
   #Markdown Lorem Ipsum generator
   gem 'doctor_ipsum'
-  #Bootstrap Markdown
-  gem 'rails-assets-bootstrap-markdown'
-  #Marked
-  gem 'rails-assets-marked'
 
   gem 'capistrano', '~> 3.7'
   gem 'capistrano-bundler', '~> 1.2'
