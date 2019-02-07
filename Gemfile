@@ -74,19 +74,6 @@ gem 'kaminari-i18n'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-  gem 'capistrano', '~> 3.7'
-  gem 'capistrano-bundler', '~> 1.2'
-  gem 'capistrano-rails', '~> 1.2'
-  #RVM Suport for Capistrano v3
-  gem 'capistrano-rvm'
-  gem 'capistrano3-unicorn'
-
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -101,6 +88,17 @@ group :development, :test do
   gem 'mailcatcher'
   #Markdown Lorem Ipsum generator
   gem 'doctor_ipsum'
+
+  # Use Capistrano for deployment
+  # gem 'capistrano-rails', group: :development
+
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
+  #RVM Suport for Capistrano v3
+  gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
+
 end
 
 group :development do

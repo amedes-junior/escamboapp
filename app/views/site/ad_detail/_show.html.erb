@@ -14,7 +14,7 @@
         <div class="ratings">
             <p>
                 <p class="pull-right"><%=@ad.rates('quality').count%> Avaliações</p>
-                <%= rating_for @ad, 'quality' %>
+                <%= rating_for @ad, 'quality', star_path: '/images/ratyrate' %>
             </p>
         </div>
     </div>
